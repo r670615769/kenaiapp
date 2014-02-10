@@ -1,0 +1,19 @@
+.pagination .active a {
+  background-color: #00b4ae;
+  border-color:#fff;
+}
+.pagination .active a:hover
+{
+  background-color: #00b4ae;
+  border-color:#fff;
+}
+.mya a {
+    display: block;
+    position: relative;
+    padding: 15px 20px;
+    line-height: 20px;
+    font-weight: 300;
+    color: #fff;
+    outline: none;
+    font-size: 50px;
+}
