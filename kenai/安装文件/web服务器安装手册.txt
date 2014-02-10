@@ -1,0 +1,12 @@
+一．	安装
+
+
+点击本文件夹中wamp-server-wamp5-2.0h.exe应用程序，点击Next（下一步），Next（下一步）完成安装。
+
+二．	配置
+
+本文件夹中kenai文件夹放入C:\wamp\www中，将本文件夹中httpd.conf文件替换掉C:\wamp\bin\apacha\Apache2.2.11\conf中的httpd.conf文件。
+
+三．	运行
+
+运行WampServer应用程序，在右下角会看到运行的图标。
