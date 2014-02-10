@@ -51,16 +51,7 @@
 
         <nav id="nav">
             <ul>
-                <?php
-                if (!empty($_SESSION['UserName']))
-                {
-                    echo '<li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登出</span></a></li>';
-                }
-                else
-                {
-                    echo'<li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登入</span></a></li>';
-                }
-                ?>
+                <li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登入</span></a></li>
                 <li><a href="HouseCheck.php" id="HouseCheck-link" ><span class="icon icon-home">房源查询</span></a></li>
                 <li><a href="ClientCheck.php" id="about-link"><span class="icon icon-th">客户查询</span></a></li>
                 <li><a href="Help.php" id="contact-link"><span class="icon icon-envelope">帮助文档</span></a></li>

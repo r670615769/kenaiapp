@@ -82,16 +82,7 @@
                    
 						<nav id="nav">
 							<ul>
-                                <?php
-                                if ($login=='Correct')
-                                {
-                                    echo '<li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登出</span></a></li>';
-                                }
-                                else
-                                {
-                                    echo'<li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登入</span></a></li>';
-                                }
-                                ?>
+                                <li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登入</span></a></li>
 								<li><a href="HouseCheck.php" id="HouseCheck-link" ><span class="icon icon-home">房源查询</span></a></li>
                                 <li><a href="ClientCheck.php" id="about-link"><span class="icon icon-th">客户查询</span></a></li>
 								<li><a href="Help.php" id="contact-link"><span class="icon icon-envelope">帮助文档</span></a></li>
@@ -188,7 +179,6 @@
                         {
                             echo'连接数据库失效';
                         }
-                        $PSearch=trim($PSearch);
                         $sql="select 姓名,移动电话||' '||电话 as 电话  ,日期 as 来访日期,接待员 from climb.客户关系管理_客户 where (移动电话 ='$PSearch' or 电话 ='$PSearch'or 姓名 like '$PSearch%') and (楼盘ID in (select distinct(楼盘ID) from climb.楼盘初始_楼盘2 where DB_ID='$SDBID'))order by 来访日期 desc";
 			            //	$sql1="select * from climb.楼盘初始_楼盘2 ";
 						//echo $sql;

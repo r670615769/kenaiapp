@@ -4,13 +4,11 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<?php header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
-session_start(); ?>
+<?php session_start(); ?>
 <html>
 	<head>
 		<title>科耐软件</title>
         <link rel="shortcut icon" href="favicon.ico" >
-        <link rel="apple-touch-icon" href="logo.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
 		<meta http-equiv="content-type" content="text/html; charset=gb2312" />
@@ -123,16 +121,8 @@ session_start(); ?>
                    
 						<nav id="nav">
 							<ul>
-                                <?php
-                                if (isset($login)&&$login=='Correct' )
-                                {
-                                    echo '<li><a href="UserLogin.php" id="UserLogin-link" class="skel-panels-ignoreHref"><span class="icon icon-user">用户登出</span></a></li>';
-                                }
-                                else
-                                {
-                                    echo '<li><a href="UserLogin.php" id="UserLogin-link" class="skel-panels-ignoreHref"><span class="icon icon-user">用户登入</span></a></li>';
-                                }
-                                ?>
+                 
+                                <li><a href="UserLogin.php" id="UserLogin-link" class="skel-panels-ignoreHref"><span class="icon icon-user">用户登入</span></a></li>
 								<li><a href="HouseCheck.php" id="HouseCheck-link" ><span class="icon icon-home">房源查询</span></a></li>
                                 <li><a href="ClientCheck.php" id="about-link"><span class="icon icon-th">客户查询</span></a></li>
 								<li><a href="Help.php" id="contact-link" ><span class="icon icon-envelope">帮助文档</span></a></li>
@@ -162,13 +152,12 @@ session_start(); ?>
           <section id="top" class="four">
               <div class="container">
   
-
+                  <header>
+                      <h2>用户登入</h2>
+                  </header>
               <?php
 				 if (isset($login)&&$login=='Correct' )     
-				  {
-                      echo '<header>
-                      <h2>用户登出</h2>
-                  </header>';
+				  {  
 					 echo '<p>'.$_SESSION["UserName"].'</p>';
 					 echo ' <form method="post" action="">
 					 <div class="row"> 
@@ -180,9 +169,6 @@ session_start(); ?>
 				  }
 				  else
 				  {
-                      echo '<header>
-                      <h2>用户登入</h2>
-                  </header>';
 					  echo '<form method="post" action="#">
 						  <div class="row half">
 

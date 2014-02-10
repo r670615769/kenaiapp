@@ -4,9 +4,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<?php header('P3P: CP="IDC DSP COR CURa ADMa OUR IND PHY ONL COM STA"');
-session_start(); ?>
-<script>Response.AddHeader("P3P", "CP=CAO PSA OUR");</script>
+<?php session_start(); ?>
 <html>
 	<head>
 		<title>科耐软件</title>
@@ -52,11 +50,7 @@ function ChangeCol($CID,$CST)
         {
            $ChST='产权';
         }
-        else
-        {
-           $ChST=$CST;  
-        }
-        echo '<td bgcolor="#b70000"><a href="House.php?CID='.$CID.'">'.$ChST.'</a></td>';
+        echo '<td bgcolor="gray"><a href="House.php?CID='.$CID.'">'.$ChST.'</a></td>';
     }
 
 }
@@ -140,9 +134,10 @@ function UpDown($GID)
 
                             <?php
                             //if (!empty($_POST['UserName']))
-                           // echo $_SESSION['DBID'];
+
                             if (!empty($_SESSION['DBID']))
                             {
+                               // echo $_SESSION['DBID'];
                                 $SDBID=$_SESSION['DBID'];
                                 $login='Correct';
                             }
@@ -174,16 +169,7 @@ function UpDown($GID)
                    
 						<nav id="nav">
 							<ul>
-                                <?php
-                                if ($login=='Correct')
-                                {
-                                    echo '<li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登出</span></a></li>';
-                                }
-                                else
-                                {
-                                    echo'<li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登入</span></a></li>';
-                                }
-                                ?>
+                                <li><a href="UserLogin.php" id="UserLogin-link" ><span class="icon icon-user">用户登入</span></a></li>
 								<li><a href="HouseCheck.php" id="HouseCheck-link" ><span class="icon icon-home">房源查询</span></a></li>
                                 <li><a href="ClientCheck.php" id="about-link"><span class="icon icon-th">客户查询</span></a></li>
 								<li><a href="Help.php" id="contact-link"><span class="icon icon-envelope">帮助文档</span></a></li>
@@ -214,7 +200,7 @@ function UpDown($GID)
                     $e = oci_error();
                     trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
                 }
-                 $DBID=$_SESSION['DBID'];
+                 $DBID='1936667';
 
                 $sqlstr='select a.楼盘ID,a.名称 from climb.楼盘初始_楼盘2 a where a.DB_ID=\''.$DBID.'\' and a.上级楼盘id is null order by a.顺序';
             //    $sqlstr = iconv("utf-8","gb2312",$sqlstr1);
